@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-Agent LLM Systems Survey</title>
+    <title>Multi-Agent LLM Systems for Psychology, Behavior, and Education: A Systematic Survey</title>
     <style>
         * {
             margin: 0;
@@ -18,7 +18,7 @@
             line-height: 1.6;
         }
 
-        /* 顶部标题区 */
+        /* Header */
         .header {
             text-align: center;
             padding: 50px 20px 30px;
@@ -50,7 +50,7 @@
             margin-top: 10px;
         }
 
-        /* 轮播容器 */
+        /* Carousel */
         .carousel-section {
             max-width: 900px;
             margin: 40px auto;
@@ -96,7 +96,7 @@
             color: #888;
         }
 
-        /* 导航按钮 */
+        /* Navigation buttons */
         .carousel-btn {
             position: absolute;
             top: 50%;
@@ -122,7 +122,7 @@
         .carousel-btn.prev { left: 12px; }
         .carousel-btn.next { right: 12px; }
 
-        /* 指示器 */
+        /* Dots */
         .carousel-dots {
             display: flex;
             justify-content: center;
@@ -146,7 +146,7 @@
             border-radius: 4px;
         }
 
-        /* 内容区块 */
+        /* Content sections */
         .content-section {
             max-width: 800px;
             margin: 0 auto 40px;
@@ -182,7 +182,7 @@
             text-indent: 2em;
         }
 
-        /* 页脚 */
+        /* Footer */
         .footer {
             text-align: center;
             padding: 30px 20px;
@@ -192,57 +192,57 @@
             margin-top: 20px;
         }
 
-        /* 响应式 */
+        /* Responsive */
         @media (max-width: 600px) {
             .header h1 { font-size: 20px; }
             .carousel-slide { padding: 16px; }
             .carousel-btn { width: 32px; height: 32px; font-size: 14px; }
         }
     </style>
+    <base target="_blank">
 <base target="_blank">
 </head>
 <body>
 
-    <!-- 标题区 -->
+    <!-- Header -->
     <div class="header">
-        <div class="subtitle">匿名投稿</div>
+        <div class="subtitle">Anonymous Submission</div>
         <h1>Multi-Agent LLM Systems for Psychology, Behavior, and Education<br>A Systematic Survey</h1>
-        <div class="subtitle">面向心理学、行为与教育的多智能体LLM系统：系统综述</div>
-        <div class="badge">EMNLP 2026 盲评</div>
+        <div class="badge">EMNLP 2026 Under Review</div>
     </div>
 
-    <!-- 图片轮播 -->
+    <!-- Image Carousel -->
     <div class="carousel-section">
         <div class="carousel-wrapper">
             <div class="carousel-track" id="track">
 
                 <div class="carousel-slide">
-                    <img src="图表/figure1.png" alt="Figure 1">
-                    <div class="slide-caption">Figure 1: 文献概览与架构演化</div>
+                    <img src="./figure1.png" alt="Figure 1">
+                    <div class="slide-caption">Figure 1: Corpus Overview and Architecture Evolution</div>
                     <div class="slide-desc">Overview of the reviewed corpus, showing temporal growth, representative systems, and process-level components</div>
                 </div>
 
                 <div class="carousel-slide">
-                    <img src="图表/figure2.png" alt="Figure 2">
-                    <div class="slide-caption">Figure 2: 分类体系 Taxonomy</div>
+                    <img src="./figure2.png" alt="Figure 2">
+                    <div class="slide-caption">Figure 2: Taxonomy</div>
                     <div class="slide-desc">Four application domains, five architectural families, core components and evaluation targets</div>
                 </div>
 
                 <div class="carousel-slide">
-                    <img src="图表/figure3.png" alt="Figure 3">
-                    <div class="slide-caption">Figure 3: 五阶段设计流程框架</div>
+                    <img src="./figure3.png" alt="Figure 3">
+                    <div class="slide-caption">Figure 3: Five-Stage Design Workflow</div>
                     <div class="slide-desc">Five-stage design workflow: Theory mapping → Orchestration → Grounding → Critique → Validation</div>
                 </div>
 
                 <div class="carousel-slide">
-                    <img src="图表/figure4.png" alt="Figure 4">
-                    <div class="slide-caption">Figure 4: 语料库统计分布</div>
+                    <img src="./figure4.png" alt="Figure 4">
+                    <div class="slide-caption">Figure 4: Corpus Statistics</div>
                     <div class="slide-desc">Corpus-level statistics across year, application domain, architecture, and evaluation target</div>
                 </div>
 
                 <div class="carousel-slide">
-                    <img src="图表/figure44.png" alt="Figure 5">
-                    <div class="slide-caption">Figure 5: 代表性编码矩阵</div>
+                    <img src="./figure44.png" alt="Figure 5">
+                    <div class="slide-caption">Figure 5: Representative Coding Matrix</div>
                     <div class="slide-desc">Representative coding matrix of multi-agent LLM systems with component and evaluation annotations</div>
                 </div>
 
@@ -255,17 +255,17 @@
         <div class="carousel-dots" id="dots"></div>
     </div>
 
-    <!-- 摘要 -->
+    <!-- Abstract -->
     <div class="content-section">
-        <div class="section-title">摘要 Abstract</div>
+        <div class="section-title">Abstract</div>
         <div class="abstract-box">
-            <p>大型语言模型（LLM）智能体正被越来越多地用于分解复杂任务、模拟社会交互以及支持教育或心理学决策。然而，多智能体LLM系统、心理学、行为学与教育学的交叉研究仍分散于自然语言处理、学习科学、人机交互、计算社会科学及健康相关研究中。</p>
-            <p>本综述通过系统检索筛选了101项研究（56篇期刊论文，45篇高质量会议论文），围绕四个应用领域进行组织：心理与心理健康评估、行为与社会模拟、教育与学习支持、以及人机协作。我们进一步归纳了五种 recurring 架构家族和一个过程级框架，将角色初始化、编排、基础与记忆、批判或反思、共识及人工验证联系起来。</p>
-            <p>我们发现，多智能体LLM系统最有价值的时刻在于将潜在的心理学或教育学构念转化为可检视的交互过程。然而，当前工作仍受限于薄弱的构念验证、不稳定的人格设定、未明确指定的通信协议以及不一致的报告实践。</p>
+            <p>Large language model (LLM) agents are increasingly used to decompose complex tasks, simulate social interaction, and support educational or psychological decision making. Yet studies at the intersection of multi-agent LLM systems, psychology, behavior, and education remain dispersed across natural language processing, learning sciences, human-computer interaction, computational social science, and health-related research.</p>
+            <p>This survey reviews 101 studies identified through a systematic search, including 56 journal articles and 45 high-quality conference papers. We organize the literature around four application areas: psychological and mental-health assessment, behavioral and social simulation, education and learning support, and human-agent collaboration. We further synthesize five recurring architectural families and a process-level framework that links role initialization, orchestration, grounding and memory, critique or reflection, consensus, and human validation.</p>
+            <p>Across the corpus, we find that multi-agent LLM systems are most valuable when they turn latent psychological or pedagogical constructs into inspectable interaction processes. However, current work remains limited by weak construct validation, unstable personas, under-specified communication protocols, and inconsistent reporting practices. We conclude with recommendations for theory-grounded agent design, interaction-level evaluation, reproducible reporting, and human oversight in high-stakes educational and psychological settings.</p>
         </div>
     </div>
 
-    <!-- 页脚 -->
+    <!-- Footer -->
     <div class="footer">
         Multi-Agent LLM Survey · 101 Studies · EMNLP 2026
     </div>
@@ -277,7 +277,7 @@
         const totalSlides = slides.length;
         const dotsContainer = document.getElementById('dots');
 
-        // 创建指示点
+        // Create dots
         for (let i = 0; i < totalSlides; i++) {
             const dot = document.createElement('span');
             dot.className = 'dot' + (i === 0 ? ' active' : '');
@@ -304,10 +304,7 @@
             updateSlide();
         }
 
-        // 自动轮播（可选）
-        // setInterval(() => moveSlide(1), 5000);
-
-        // 键盘导航
+        // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowLeft') moveSlide(-1);
             if (e.key === 'ArrowRight') moveSlide(1);
