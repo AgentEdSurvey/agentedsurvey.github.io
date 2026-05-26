@@ -1,315 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-Agent LLM Systems for Psychology, Behavior, and Education: A Systematic Survey</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multi-Agent LLM Systems Survey</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-        }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
 
-        /* Header */
-        .header {
-            text-align: center;
-            padding: 50px 20px 30px;
-            background: #fff;
-            border-bottom: 1px solid #e9ecef;
-        }
+    .header {
+      text-align: center;
+      padding: 56px 20px 34px;
+      background: #fff;
+      border-bottom: 1px solid #e9ecef;
+    }
 
-        .header h1 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #1a1a2e;
-            margin-bottom: 12px;
-            line-height: 1.3;
-        }
+    .header h1 {
+      font-size: 30px;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
 
-        .header .subtitle {
-            font-size: 14px;
-            color: #888;
-            margin-bottom: 8px;
-        }
+    .subtitle {
+      font-size: 15px;
+      color: #666;
+      margin-bottom: 8px;
+    }
 
-        .header .badge {
-            display: inline-block;
-            background: #1a1a2e;
-            color: #fff;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            margin-top: 10px;
-        }
+    .badge {
+      display: inline-block;
+      background: #1a1a2e;
+      color: #fff;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-top: 10px;
+    }
 
-        /* Carousel */
-        .carousel-section {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+    .carousel-section {
+      max-width: 950px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
 
-        .carousel-wrapper {
-            position: relative;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-            overflow: hidden;
-        }
+    .carousel-wrapper {
+      position: relative;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
 
-        .carousel-track {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
 
-        .carousel-slide {
-            min-width: 100%;
-            padding: 30px;
-            text-align: center;
-        }
+    .carousel-slide {
+      min-width: 100%;
+      padding: 30px;
+      text-align: center;
+    }
 
-        .carousel-slide img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            border: 1px solid #eee;
-        }
+    .carousel-slide img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #eee;
+    }
 
-        .slide-caption {
-            margin-top: 16px;
-            font-size: 15px;
-            color: #555;
-            font-weight: 500;
-        }
+    .slide-caption {
+      margin-top: 16px;
+      font-size: 16px;
+      color: #333;
+      font-weight: 600;
+    }
 
-        .slide-desc {
-            margin-top: 8px;
-            font-size: 13px;
-            color: #888;
-        }
+    .slide-desc {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #777;
+    }
 
-        /* Navigation buttons */
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 40px;
-            height: 40px;
-            border: none;
-            background: rgba(255,255,255,0.9);
-            border-radius: 50%;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-            cursor: pointer;
-            font-size: 18px;
-            color: #333;
-            z-index: 10;
-            transition: all 0.2s;
-        }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      border: none;
+      background: rgba(255,255,255,0.92);
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.16);
+      cursor: pointer;
+      font-size: 18px;
+      color: #333;
+      z-index: 10;
+    }
 
-        .carousel-btn:hover {
-            background: #fff;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
+    .carousel-btn.prev { left: 12px; }
+    .carousel-btn.next { right: 12px; }
 
-        .carousel-btn.prev { left: 12px; }
-        .carousel-btn.next { right: 12px; }
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 16px 0 24px;
+      background: #fff;
+    }
 
-        /* Dots */
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            padding: 16px 0 24px;
-            background: #fff;
-        }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ddd;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
 
-        .dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #ddd;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
+    .dot.active {
+      background: #1a1a2e;
+      width: 24px;
+      border-radius: 4px;
+    }
 
-        .dot.active {
-            background: #1a1a2e;
-            width: 24px;
-            border-radius: 4px;
-        }
+    .content-section {
+      max-width: 850px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+    }
 
-        /* Content sections */
-        .content-section {
-            max-width: 800px;
-            margin: 0 auto 40px;
-            padding: 0 20px;
-        }
+    .section-title {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 600;
+      color: #1a1a2e;
+      margin-bottom: 24px;
+    }
 
-        .section-title {
-            text-align: center;
-            font-size: 20px;
-            font-weight: 600;
-            color: #1a1a2e;
-            margin-bottom: 24px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #1a1a2e;
-            display: inline-block;
-            left: 50%;
-            position: relative;
-            transform: translateX(-50%);
-        }
+    .abstract-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      font-size: 15px;
+      color: #555;
+      line-height: 1.9;
+    }
 
-        .abstract-box {
-            background: #fff;
-            padding: 28px;
-            border-radius: 12px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            font-size: 14px;
-            color: #555;
-            line-height: 2;
-        }
+    .abstract-box p { margin-bottom: 14px; }
 
-        .abstract-box p {
-            margin-bottom: 12px;
-            text-indent: 2em;
-        }
+    .footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #aaa;
+      font-size: 12px;
+      border-top: 1px solid #e9ecef;
+      margin-top: 20px;
+    }
 
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 30px 20px;
-            color: #aaa;
-            font-size: 12px;
-            border-top: 1px solid #e9ecef;
-            margin-top: 20px;
-        }
-
-        /* Responsive */
-        @media (max-width: 600px) {
-            .header h1 { font-size: 20px; }
-            .carousel-slide { padding: 16px; }
-            .carousel-btn { width: 32px; height: 32px; font-size: 14px; }
-        }
-    </style>
-    <base target="_blank">
-<base target="_blank">
+    @media (max-width: 600px) {
+      .header h1 { font-size: 22px; }
+      .carousel-slide { padding: 16px; }
+      .carousel-btn { width: 32px; height: 32px; font-size: 14px; }
+    }
+  </style>
 </head>
+
 <body>
+  <div class="header">
+    <div class="subtitle">Anonymous Submission</div>
+    <h1>Multi-Agent LLM Systems for Psychology, Behavior, and Education:<br>A Systematic Survey</h1>
+    <div class="badge">EMNLP 2026 Review</div>
+  </div>
 
-    <!-- Header -->
-    <div class="header">
-        <div class="subtitle">Anonymous Submission</div>
-        <h1>Multi-Agent LLM Systems for Psychology, Behavior, and Education<br>A Systematic Survey</h1>
-        <div class="badge">EMNLP 2026 Under Review</div>
-    </div>
+  <div class="carousel-section">
+    <div class="carousel-wrapper">
+      <div class="carousel-track" id="track">
 
-    <!-- Image Carousel -->
-    <div class="carousel-section">
-        <div class="carousel-wrapper">
-            <div class="carousel-track" id="track">
-
-                <div class="carousel-slide">
-                    <img src="./figure1.png" alt="Figure 1">
-                    <div class="slide-caption">Figure 1: Corpus Overview and Architecture Evolution</div>
-                    <div class="slide-desc">Overview of the reviewed corpus, showing temporal growth, representative systems, and process-level components</div>
-                </div>
-
-                <div class="carousel-slide">
-                    <img src="./figure2.png" alt="Figure 2">
-                    <div class="slide-caption">Figure 2: Taxonomy</div>
-                    <div class="slide-desc">Four application domains, five architectural families, core components and evaluation targets</div>
-                </div>
-
-                <div class="carousel-slide">
-                    <img src="./figure3.png" alt="Figure 3">
-                    <div class="slide-caption">Figure 3: Five-Stage Design Workflow</div>
-                    <div class="slide-desc">Five-stage design workflow: Theory mapping → Orchestration → Grounding → Critique → Validation</div>
-                </div>
-
-                <div class="carousel-slide">
-                    <img src="./figure4.png" alt="Figure 4">
-                    <div class="slide-caption">Figure 4: Corpus Statistics</div>
-                    <div class="slide-desc">Corpus-level statistics across year, application domain, architecture, and evaluation target</div>
-                </div>
-
-                <div class="carousel-slide">
-                    <img src="./figure44.png" alt="Figure 5">
-                    <div class="slide-caption">Figure 5: Representative Coding Matrix</div>
-                    <div class="slide-desc">Representative coding matrix of multi-agent LLM systems with component and evaluation annotations</div>
-                </div>
-
-            </div>
-
-            <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+        <div class="carousel-slide">
+          <img src="figures/figure1.png" alt="Figure 1">
+          <div class="slide-caption">Figure 1. Overview of the Reviewed Corpus</div>
+          <div class="slide-desc">Temporal growth, representative systems, and process-level components.</div>
         </div>
 
-        <div class="carousel-dots" id="dots"></div>
-    </div>
-
-    <!-- Abstract -->
-    <div class="content-section">
-        <div class="section-title">Abstract</div>
-        <div class="abstract-box">
-            <p>Large language model (LLM) agents are increasingly used to decompose complex tasks, simulate social interaction, and support educational or psychological decision making. Yet studies at the intersection of multi-agent LLM systems, psychology, behavior, and education remain dispersed across natural language processing, learning sciences, human-computer interaction, computational social science, and health-related research.</p>
-            <p>This survey reviews 101 studies identified through a systematic search, including 56 journal articles and 45 high-quality conference papers. We organize the literature around four application areas: psychological and mental-health assessment, behavioral and social simulation, education and learning support, and human-agent collaboration. We further synthesize five recurring architectural families and a process-level framework that links role initialization, orchestration, grounding and memory, critique or reflection, consensus, and human validation.</p>
-            <p>Across the corpus, we find that multi-agent LLM systems are most valuable when they turn latent psychological or pedagogical constructs into inspectable interaction processes. However, current work remains limited by weak construct validation, unstable personas, under-specified communication protocols, and inconsistent reporting practices. We conclude with recommendations for theory-grounded agent design, interaction-level evaluation, reproducible reporting, and human oversight in high-stakes educational and psychological settings.</p>
+        <div class="carousel-slide">
+          <img src="figures/figure2.png" alt="Figure 2">
+          <div class="slide-caption">Figure 2. Taxonomy of Multi-Agent LLM Systems</div>
+          <div class="slide-desc">Application domains, architectural families, core components, and evaluation targets.</div>
         </div>
+
+        <div class="carousel-slide">
+          <img src="figures/figure3.png" alt="Figure 3">
+          <div class="slide-caption">Figure 3. Five-Stage Design Workflow</div>
+          <div class="slide-desc">Theory mapping, orchestration, grounding and memory, critique, and validation.</div>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="figures/figure4.png" alt="Figure 4">
+          <div class="slide-caption">Figure 4. Corpus-Level Statistics</div>
+          <div class="slide-desc">Distributions across year, application domain, architecture, and evaluation target.</div>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="figures/figure44.png" alt="Figure 5">
+          <div class="slide-caption">Figure 5. Representative Coding Matrix</div>
+          <div class="slide-desc">A structured evidence map of system components and evaluation dimensions.</div>
+        </div>
+
+      </div>
+
+      <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+      <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
     </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        Multi-Agent LLM Survey · 101 Studies · EMNLP 2026
+    <div class="carousel-dots" id="dots"></div>
+  </div>
+
+  <div class="content-section">
+    <div class="section-title">Abstract</div>
+    <div class="abstract-box">
+      <p>
+        Large language model agents are increasingly used to decompose complex tasks,
+        simulate social interaction, and support educational or psychological decision making.
+        Yet studies at the intersection of multi-agent LLM systems, psychology, behavior,
+        and education remain dispersed across multiple research communities.
+      </p>
+      <p>
+        This survey reviews 101 studies identified through a systematic search, including
+        56 journal articles and 45 conference papers. We organize the literature around
+        four application areas: psychological and mental-health assessment, behavioral and
+        social simulation, education and learning support, and human-agent collaboration.
+      </p>
+      <p>
+        We further synthesize five recurring architectural families and a process-level
+        framework that links role initialization, orchestration, grounding and memory,
+        critique or reflection, consensus, and human validation. We conclude with
+        recommendations for theory-grounded agent design, interaction-level evaluation,
+        reproducible reporting, and human oversight in high-stakes settings.
+      </p>
     </div>
+  </div>
 
-    <script>
-        let currentSlide = 0;
-        const track = document.getElementById('track');
-        const slides = document.querySelectorAll('.carousel-slide');
-        const totalSlides = slides.length;
-        const dotsContainer = document.getElementById('dots');
+  <div class="footer">
+    Multi-Agent LLM Systems Survey · 101 Studies · EMNLP 2026
+  </div>
 
-        // Create dots
-        for (let i = 0; i < totalSlides; i++) {
-            const dot = document.createElement('span');
-            dot.className = 'dot' + (i === 0 ? ' active' : '');
-            dot.onclick = () => goToSlide(i);
-            dotsContainer.appendChild(dot);
-        }
+  <script>
+    let currentSlide = 0;
+    const track = document.getElementById('track');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const totalSlides = slides.length;
+    const dotsContainer = document.getElementById('dots');
 
-        const dots = document.querySelectorAll('.dot');
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('span');
+      dot.className = 'dot' + (i === 0 ? ' active' : '');
+      dot.onclick = () => goToSlide(i);
+      dotsContainer.appendChild(dot);
+    }
 
-        function updateSlide() {
-            track.style.transform = `translateX(-${currentSlide * 100}%)`;
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === currentSlide);
-            });
-        }
+    const dots = document.querySelectorAll('.dot');
 
-        function moveSlide(direction) {
-            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-            updateSlide();
-        }
+    function updateSlide() {
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentSlide);
+      });
+    }
 
-        function goToSlide(index) {
-            currentSlide = index;
-            updateSlide();
-        }
+    function moveSlide(direction) {
+      currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+      updateSlide();
+    }
 
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') moveSlide(-1);
-            if (e.key === 'ArrowRight') moveSlide(1);
-        });
-    </script>
+    function goToSlide(index) {
+      currentSlide = index;
+      updateSlide();
+    }
 
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') moveSlide(-1);
+      if (e.key === 'ArrowRight') moveSlide(1);
+    });
+  </script>
 </body>
 </html>
