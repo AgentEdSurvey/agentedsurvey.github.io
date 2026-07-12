@@ -235,10 +235,6 @@ These mechanisms are **non-exclusive**.
 
 ## 🔄 Five-Stage Design Workflow / 五阶段设计流程
 
-<p align="center">
-  <img src="./figures/figure3.png" width="72%" alt="Five-stage design workflow"/>
-</p>
-
 ### 1️⃣ Theory Mapping
 
 Map psychological, behavioral, or educational constructs to agent roles and responsibilities.
@@ -260,29 +256,6 @@ Introduce reviewers, critics, judges, or adversarial agents to evaluate logic, f
 Synthesize outputs, preserve uncertainty, compare with benchmarks, and route high-stakes decisions to human review.
 
 ---
-
-## 📌 Corpus Status / 语料状态说明
-
-The current 101-study package was reconstructed from:
-
-1. 📖 studies explicitly cited in the submitted manuscript;
-2. 🔍 eligible records selected from the supplied candidate exports.
-
-The repository includes `selection_audit.csv` to make the source and matching status of every record transparent.
-
-当前 101 篇语料由两部分构成：
-
-1. 投稿论文中明确引用的研究；
-2. 从作者提供的候选导出记录中筛选出的合适研究。
-
-为保证透明度，仓库同时提供 `selection_audit.csv`，记录每条文献的来源、匹配方式与状态。
-
-> ⚠️ **Important:** The coding matrix uses conservative title/abstract-level coding where full-text confirmation was unavailable. Blank cells mean “not safely inferable,” not necessarily “absent.”
-
-> ⚠️ **重要说明：** 在无法完成全文确认的情况下，编码矩阵采用保守的标题/摘要层级编码。空白单元格表示“无法安全判断”，不一定表示该特征不存在。
-
----
-
 ## 📊 Corpus Statistics / 语料统计
 
 ### 📅 Publication Year
@@ -293,10 +266,6 @@ The repository includes `selection_audit.csv` to make the source and matching st
 | 2024 | 21 |
 | 2025 | 57 |
 | 2026 | 18 |
-
-> 2026 is incomplete because the corpus was closed before the end of the year.
-
-Architecture and evaluation counts should be generated from the latest verified coding matrix rather than entered manually.
 
 ---
 
@@ -345,16 +314,6 @@ During anonymous review, please cite the manuscript as:
 ```
 
 The citation will be updated after publication.
-
----
-
-## 🕵️ Anonymous Review Notice / 匿名评审说明
-
-This repository is prepared for anonymous review.
-
-Author names, institutional affiliations, personal email addresses, and identifying metadata should be removed from the public materials.
-
-本仓库用于匿名评审。公开材料中不应包含作者姓名、机构、个人邮箱或其他可识别身份的信息。
 
 ---
 
