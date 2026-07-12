@@ -112,11 +112,6 @@ A structured corpus of **101 studies** spanning NLP, HCI, psychology, education,
 
 ## 📦 Data Files / 数据文件
 
-### 📘 Full Corpus
-
-- 📄 [Full 101-study corpus](./data/full_corpus_101.csv)
-- 📚 [Full BibTeX bibliography](./data/full_corpus.bib)
-
 `full_corpus_101.csv` contains:
 
 - 🆔 study ID
