@@ -1,0 +1,27 @@
+﻿dimension,label,count,denominator,percentage,basis,note
+year,2023,2,101,2.0,All reconstructed corpus records,
+year,2024,21,101,20.8,All reconstructed corpus records,
+year,2025,70,101,69.3,All reconstructed corpus records,
+year,2026,8,101,7.9,All reconstructed corpus records,
+publication_type,conference,84,101,83.2,All reconstructed corpus records,Publication type inferred from supplied RIS or transcribed manuscript reference.
+publication_type,journal,17,101,16.8,All reconstructed corpus records,Publication type inferred from supplied RIS or transcribed manuscript reference.
+conservative_coding,domain_psy,24,101,23.8,Explicit title/abstract evidence only,Not the manuscript's final coding statistics; full-text verification is required.
+conservative_coding,domain_edu,62,101,61.4,Explicit title/abstract evidence only,Not the manuscript's final coding statistics; full-text verification is required.
+conservative_coding,domain_beh,27,101,26.7,Explicit title/abstract evidence only,Not the manuscript's final coding statistics; full-text verification is required.
+conservative_coding,domain_ha,20,101,19.8,Explicit title/abstract evidence only,Not the manuscript's final coding statistics; full-text verification is required.
+conservative_coding,arch_deb,13,101,12.9,Explicit title/abstract evidence only,Not the manuscript's final coding statistics; full-text verification is required.
+conservative_coding,arch_soc,42,101,41.6,Explicit title/abstract evidence only,Not the manuscript's final coding statistics; full-text verification is required.
+conservative_coding,arch_game,20,101,19.8,Explicit title/abstract evidence only,Not the manuscript's final coding statistics; full-text verification is required.
+conservative_coding,arch_grdw,37,101,36.6,Explicit title/abstract evidence only,Not the manuscript's final coding statistics; full-text verification is required.
+conservative_coding,arch_pipe,13,101,12.9,Explicit title/abstract evidence only,Not the manuscript's final coding statistics; full-text verification is required.
+conservative_coding,component_role,50,101,49.5,Explicit title/abstract evidence only,Not the manuscript's final coding statistics; full-text verification is required.
+conservative_coding,component_mem,11,101,10.9,Explicit title/abstract evidence only,Not the manuscript's final coding statistics; full-text verification is required.
+conservative_coding,component_grd,30,101,29.7,Explicit title/abstract evidence only,Not the manuscript's final coding statistics; full-text verification is required.
+conservative_coding,component_ref,19,101,18.8,Explicit title/abstract evidence only,Not the manuscript's final coding statistics; full-text verification is required.
+conservative_coding,component_con,7,101,6.9,Explicit title/abstract evidence only,Not the manuscript's final coding statistics; full-text verification is required.
+conservative_coding,eval_cv,10,101,9.9,Explicit title/abstract evidence only,Not the manuscript's final coding statistics; full-text verification is required.
+conservative_coding,eval_rel,5,101,5.0,Explicit title/abstract evidence only,Not the manuscript's final coding statistics; full-text verification is required.
+conservative_coding,eval_br,18,101,17.8,Explicit title/abstract evidence only,Not the manuscript's final coding statistics; full-text verification is required.
+conservative_coding,eval_ped,24,101,23.8,Explicit title/abstract evidence only,Not the manuscript's final coding statistics; full-text verification is required.
+conservative_coding,eval_safe,17,101,16.8,Explicit title/abstract evidence only,Not the manuscript's final coding statistics; full-text verification is required.
+conservative_coding,human_validation,11,101,10.9,Explicit title/abstract evidence only,Not the manuscript's final coding statistics; full-text verification is required.
